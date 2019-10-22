@@ -72,7 +72,7 @@ public class ProblemSet4 {
           }
         }
 
-    System.out.printf("\n%,d\n", integerSum);
+    System.out.printf("\n%,d.\n", integerSum);
     }
 
     /*
@@ -83,26 +83,26 @@ public class ProblemSet4 {
      */
 
     public void reverse() {
-      int forwardPositiveIntegerInput;
+      int forwardIntInput;
             System.out.println("");
             do {
               System.out.print("Positive integer: ");
-              forwardPositiveIntegerInput = in.nextInt();
-            } while (forwardPositiveIntegerInput <= 0);
-            String forwardPositiveInteger = String.valueOf(forwardPositiveIntegerInput);
-            String reversePositiveInteger = "";
-            String digitToAdd = "";
+              forwardIntInput = in.nextInt();
+            } while (forwardIntInput <= 0);
+            String forwardInt = String.valueOf(forwardIntInput);
+            String reverseInt = "";
+            String addDigit = "";
 
-            for (int i = forwardPositiveInteger.length(); i > 0; i--) {
-              if(i != forwardPositiveInteger.length()) {
-                reversePositiveInteger = reversePositiveInteger + ", ";
+            for (int i = forwardInt.length(); i > 0; i--) {
+              if(i != forwardInt.length()) {
+                reverseInt = reverseInt + ", ";
               }
-              digitToAdd = forwardPositiveInteger.substring(i - 1, i);
-              reversePositiveInteger = reversePositiveInteger + digitToAdd;
+              addDigit = forwardInt.substring(i - 1, i);
+              reverseInt = reverseInt + addDigit;
             }
-            reversePositiveInteger = reversePositiveInteger + ".";
+            reverseInt = reverseInt + ".";
 
-            System.out.println("\n" + reversePositiveInteger);
+            System.out.println("\n" + reverseInt);
     }
 
     /*
@@ -113,7 +113,25 @@ public class ProblemSet4 {
      */
 
     public void digits() {
+      int oddInt;
+            int oddIntSum = 0;
 
+            System.out.println("");
+            do {
+              System.out.print("Positive integer: ");
+              oddInt = in.nextInt();
+            } while (oddInt <= 0);
+            String oddIntString = String.valueOf(oddInt);
+            int addInteger;
+
+            for (int i = oddIntString.length(); i > 0; i--) {
+              addInteger = Integer.parseInt(oddIntString.substring(i - 1, i));
+              if(addInteger % 2 == 1) {
+                oddIntSum += addInteger;
+              }
+            }
+
+        System.out.println("\n" + oddIntSum + ".");
     }
 
     /*
@@ -125,8 +143,27 @@ public class ProblemSet4 {
      */
 
     public void average() {
+        int intListItem = 0;
+        int intListTotal = 0;
+        int numNonNegativeInt = 0;
 
-    }
+        System.out.println("");
+        do {
+          System.out.print("Non-negative integer: ");
+          intListItem = in.nextInt();
+          if(intListItem >= 0) {
+            intListTotal += intListItem;
+            numNonNegativeInt++;
+          }
+        } while (intListItem >= 0);
+
+        if (numNonNegativeInt > 0) {
+          double nonNegativeIntAvg = (double) intListTotal / (double) numNonNegativeInt;
+          System.out.printf("\n%,.2f\n", nonNegativeIntAvg);
+        } else {
+          System.out.println("\nIn order for the program to work, you need to input at least one number to average before entering a negative to end the program.");
+          }
+      }
 
     /*
      * Exercise 5.
