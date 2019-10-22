@@ -172,7 +172,24 @@ public class ProblemSet4 {
      */
 
     public void prime() {
+      int maybePrimeInt;
+          boolean isPrime = true;
 
+          System.out.println("");
+          do {
+            System.out.print("Non-negative integer: ");
+            maybePrimeInt = in.nextInt();
+          } while (maybePrimeInt < 0);
+
+          String maybePrimeString = String.valueOf(maybePrimeInt);
+          for (int i = 2; i <= maybePrimeInt / 2; i++) {
+
+          }
+          if (isPrime == true) {
+            System.out.println("\nPrime.");
+          } else {
+            System.out.println("\nNot prime.");
+          }
     }
 
     /*
