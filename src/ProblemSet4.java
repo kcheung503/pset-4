@@ -52,28 +52,26 @@ public class ProblemSet4 {
      */
 
     public void sum() {
-      int lowerBound = 1;
-      int upperBound = 0;
+     int lowerBound = 1;
+     int upperBound = 0;
+     int integerSum = 0;
 
-        do {
-          System.out.print("\nLower bound: ");
-          lowerBound = in.nextInt();
-          System.out.print("Upper bound: ");
-          upperBound = in.nextInt();
-        } while (lowerBound > upperBound);
+     System.out.println("");
+     while (lowerBound > upperBound) {
+       System.out.print("Lower bound: ");
+       lowerBound = in.nextInt();
+       System.out.print("Upper bound: ");
+       upperBound = in.nextInt();
+     }
 
-        int integerSum = 0;
-        int addableAmount = 0;
+     for (int i = lowerBound; i <= upperBound; i++) {
+       if (i % 2 == 0) {
+         integerSum += i;
+       }
+     }
 
-        for (int i = lowerBound; i <= upperBound; i++) {
-          if (i % 2 == 0) {
-            addableAmount = Math.abs(i);
-            integerSum += addableAmount;
-          }
-        }
-
-    System.out.printf("\n%,d.\n", integerSum);
-    }
+     System.out.printf("\n%,d.\n", integerSum);
+   }
 
     /*
      * Exercise 2.
@@ -159,7 +157,7 @@ public class ProblemSet4 {
 
         if (numNonNegativeInt > 0) {
           double nonNegativeIntAvg = (double) intListTotal / (double) numNonNegativeInt;
-          System.out.printf("\n%,.2f\n", nonNegativeIntAvg);
+          System.out.printf("\n%,.2f\n", nonNegativeIntAvg, ".");
         } else {
           System.out.println("\nIn order for the program to work, you need to input at least one number to average before entering a negative to end the program.");
           }
@@ -200,7 +198,24 @@ public class ProblemSet4 {
      */
 
     public void fibonacci() {
+      int n = 0;
+         System.out.println("");
+         while (n <= 0 || n > 92) {
+             System.out.print("Positive integer: ");
+             n = in.nextInt();
+         }
 
+         long base1 = 0;
+         long base2 = 1;
+         long fibonacci = 0;
+
+         for (int i = 2; i <= n; i++) {
+             fibonacci = base1 + base2;
+             base1 = base2;
+             base2 = fibonacci;
+         }
+
+         System.out.println("\n" + base2 + ".");
     }
 
     /*
