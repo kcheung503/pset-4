@@ -264,7 +264,26 @@ public class ProblemSet4 {
      */
 
     public void mario() {
-
+      int halfPyramidHeight = 0;
+      int numHashtags;
+      int numSpaces;
+      System.out.println("\n");
+      while (halfPyramidHeight < 1 || halfPyramidHeight > 24) {
+          System.out.print("Height: ");
+          halfPyramidHeight = in.nextInt();
+      }
+      System.out.println("");
+      for (int i = 1; i <= halfPyramidHeight; i++) {
+        numHashtags = i;
+        numSpaces = halfPyramidHeight - numHashtags - 1;
+        for (int x = 0; x <= numSpaces; x++) {
+          System.out.print(" ");
+        }
+        for (int y = 0; y <= numHashtags; y++) {
+          System.out.print("#");
+        }
+        System.out.print("\n");
+      }
     }
 
     /*
@@ -275,7 +294,30 @@ public class ProblemSet4 {
      */
 
     public void luigi() {
-
+      int pyramidHeight = 0;
+      int numHashtags;
+      int numSpaces;
+      System.out.println("");
+      while (pyramidHeight < 1 || pyramidHeight > 24) {
+          System.out.print("Height: ");
+          pyramidHeight = in.nextInt();
+      }
+      System.out.println("");
+      for (int i = 1; i <= pyramidHeight; i++) {
+        numHashtags = i;
+        numSpaces = pyramidHeight - numHashtags - 1;
+        for (int x = 0; x <= numSpaces; x++) {
+          System.out.print(" ");
+        }
+        for (int y = 0; y <= numHashtags; y++) {
+          System.out.print("#");
+        }
+        System.out.print(" ");
+        for (int z = 0; z <= numHashtags; z++) {
+          System.out.print("#");
+        }
+        System.out.print("\n");
+      }
     }
 
     /*
