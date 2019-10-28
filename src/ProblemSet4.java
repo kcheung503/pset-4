@@ -225,7 +225,35 @@ public class ProblemSet4 {
      */
 
     public void factors() {
+      int intToFactor = 0;
+        System.out.println(" ");
+        while (intToFactor <= 0) {
+            System.out.print("Positive integer: ");
+            intToFactor = in.nextInt();
+        }
 
+        String usedFactors = " ";
+        int factor1;
+        int factor2;
+        boolean lineStarted = false;
+        double factoringRemainder;
+
+        for (int i = 1; i <= intToFactor; i++) {
+          factor1 = i;
+          factoringRemainder = (double) intToFactor % (double) factor1;
+          factor2 = intToFactor / factor1;
+          if (factoringRemainder == 0 && !usedFactors.contains(String.valueOf(" " + factor1 + " ")) && !usedFactors.contains(String.valueOf(" " + factor2 + " "))) {
+            usedFactors = usedFactors + factor1 + " " + factor2 + " ";
+            if (lineStarted == true) {
+              System.out.print(", ");
+            } else {
+              System.out.println(" ");
+            }
+            System.out.print(factor1 + ", " + factor2);
+            lineStarted = true;
+          }
+        }
+        System.out.print(".");
     }
 
     /*
